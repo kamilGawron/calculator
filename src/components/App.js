@@ -1,17 +1,24 @@
 import React from 'react';
-import {btnClick,btnEqualClick} from '../services/btnClick'
+import {btnEqualClick,numberClick} from '../services/btnClick'
 import {setResultAccuracy} from '../services/resultAccuracy'
 import {connect} from 'react-redux'
 import {addNewNum,addNewSign,clearSigns,clearLast} from '../actions/signs'
 
 
 class App extends React.Component{
-
+    
     render(){
          return (
       <React.Fragment>
        <div id="display">
-             {this.props.signs[0]? <div>{this.props.signs} = {setResultAccuracy(this.props.result)}</div>:<div>Type numbers</div>}
+            {this.props.signs[0]?
+               <div id="calcResult">
+                   <div className="operation">{this.props.signs}</div>
+                   <div className="result-before">{setResultAccuracy(this.props.result)}</div>
+               </div>
+               :
+                <div id="desc">Type numbers</div>
+           }
             
       </div>
       <div id="buttons">
@@ -22,26 +29,26 @@ class App extends React.Component{
             <button onClick={this.props.onAddNewSign}>*</button> 
           </div>
           <div>
-            <button onClick={this.props.onAddNewNum}>7</button> 
-            <button onClick={this.props.onAddNewNum}>8</button> 
-            <button onClick={this.props.onAddNewNum}>9</button> 
+            <button onClick={numberClick}>7</button> 
+            <button onClick={numberClick}>8</button> 
+            <button onClick={numberClick}>9</button> 
             <button onClick={this.props.onAddNewSign}>-</button> 
           </div>
           <div>
-            <button onClick={this.props.onAddNewNum}>4</button> 
-            <button onClick={this.props.onAddNewNum}>5</button> 
-            <button onClick={this.props.onAddNewNum}>6</button> 
+            <button onClick={numberClick}>4</button> 
+            <button onClick={numberClick}>5</button> 
+            <button onClick={numberClick}>6</button> 
             <button onClick={this.props.onAddNewSign}>+</button> 
           </div>
           <div>
-            <button onClick={this.props.onAddNewNum}>1</button> 
-            <button onClick={this.props.onAddNewNum}>2</button> 
-            <button onClick={this.props.onAddNewNum}>3</button> 
+            <button onClick={numberClick}>1</button> 
+            <button onClick={numberClick}>2</button> 
+            <button onClick={numberClick}>3</button> 
             <button onClick={this.props.onAddNewSign}>(</button> 
           </div>
           <div>
             <button onClick={this.props.onAddNewSign}>.</button> 
-            <button onClick={this.props.onAddNewNum}>0</button> 
+            <button onClick={numberClick}>0</button> 
              <button onClick={this.props.onAddNewSign}>)</button> 
             <button onClick={btnEqualClick}>=</button> 
           </div>

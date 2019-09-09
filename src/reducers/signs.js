@@ -122,7 +122,6 @@ const checkSign=(signs,sign)=>{
         return ["*","("];
     }
     if((isNaN(sign))&&((!lastSignIsNum(signs))&&(sign!=")")&&(sign!="("))){
-        console.log("in");
         return [sign];
     }
     if(sign=="(") openingBracketCounter++;
