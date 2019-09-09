@@ -1,4 +1,4 @@
-import {ADD_NUM,ADD_SIGN,CLEAR_SIGNS,CLEAR_LAST,SET_RES} from './types'
+import {ADD_NUM,ADD_SIGN,CLEAR_SIGNS,CLEAR_LAST,SET_RES,ADD_OPEN_BRACKET,ADD_CLOSE_BRACKET} from './types'
 
 export const addNewNum = e =>{
     return{
@@ -26,5 +26,15 @@ export const setResult = (res) =>{
     return {
         type: SET_RES,
         result:res
+    }
+}
+export const addOpenBracket = () =>{
+    return {
+        type: ADD_OPEN_BRACKET
+    }
+}
+export const addCloseBracket = () =>{
+    return {
+        type: ADD_CLOSE_BRACKET
     }
 }

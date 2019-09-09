@@ -1,5 +1,6 @@
 html{
     font-size: 10px;
+    font-family: 'Aldrich', sans-serif;
 }
 body{
     margin: 0;
@@ -16,6 +17,8 @@ body>div>div#display{
     justify-content: center;
     align-items: center;
     font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 body>div>div#buttons{
     height: 70vh;
@@ -35,6 +38,10 @@ body>div>div#buttons>div>button{
     color: rgba(224, 255, 255,.7);
     font-size: 4rem;
     transition: all .4s ease-in-out;
+    font-family: inherit;
+
+}
+body>div>div#buttons>div:last-of-type>button:last-of-type{
 }
 body>div>div#buttons>div>button:hover{
     background-color: rgb(1, 0,35);
