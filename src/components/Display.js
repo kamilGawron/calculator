@@ -1,18 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {setResultAccuracy} from '../services/resultAccuracy'
+import CalcResult from './CalcResult'
+import CalcDescription from './CalcDescription'
 
 class Display extends React.Component{
     render(){
         return(
             <div id="display">
                 {this.props.signs[0]?
-                   <div id="calcResult">
-                       <div className="operation">{this.props.signs}</div>
-                       <div className="result-before">{setResultAccuracy(this.props.result)}</div>
-                   </div>
-                   :
-                    <div id="desc">Type numbers</div>
+                    <CalcResult />
+                :
+                    <CalcDescription />
                }
           </div>
         )
@@ -21,7 +19,6 @@ class Display extends React.Component{
 
 const mapStateToProps = state =>({
     signs:state.signs.signs,
-    result:state.signs.result
 })
 
 export default connect (mapStateToProps)(Display);
