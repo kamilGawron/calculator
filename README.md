@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 [See on GitHub Pages](https://kamilgawron.github.io/calculator/)
 
-![alt text](https://raw.githubusercontent.com/kamilgawron/calculator/master/src/img/screen.jpg)
+![alt text](https://raw.githubusercontent.com/kamilgawron/calculator/master/src/img/screen.png)
 
 
 ## Setup
